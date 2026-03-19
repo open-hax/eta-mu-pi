@@ -1,2 +1,4 @@
 2026-03-18T00:00:00Z | kind=observation | origin=pi | owner=err | dod=spec-draft | pi=pi | host=local | manifest=- | refs=pi-self-contained-repo | note=begin self-contained ~/.pi repo migration and absorption of legacy skill sources
 2026-03-19T00:13:39Z | kind=observation | origin=pi | owner=err | dod=impl | pi=pi | host=local | manifest=- | refs=pi-self-contained-repo | note=copied canonical skills into ~/.pi, absorbed legacy opencode-skills, and mirrored operation-mindfuck contracts into repo
+2026-03-19T00:17:12Z | kind=build | origin=pi | owner=err | dod=verify | pi=pi | host=local | manifest=- | refs=pi-self-contained-repo,3275b64 | note=verified canonical ~/.pi repo layout, ignore rules, and legacy-path removal from active runtime config
+2026-03-19T00:17:12Z | kind=catalog | origin=pi | owner=err | dod=commit | pi=pi | host=local | manifest=- | refs=pi-self-contained-repo,3275b64 | note=committed self-contained ~/.pi repo initialization

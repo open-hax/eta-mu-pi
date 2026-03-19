@@ -48,3 +48,14 @@ Make `~/.pi` the canonical, self-contained git repo for pi agent runtime assets.
 - All current `~/.agents/skills` are present under `~/.pi`.
 - Former `opencode-skills` repo contents are preserved inside `~/.pi`.
 - Verification confirms no active runtime references remain to legacy skill or opmf paths.
+
+## Status
+- Local migration complete.
+- Remote GitHub creation still pending because repo slug / visibility choice is unresolved.
+
+## Verification
+- `agent/settings.json` parses and now points at `~/.pi/agent/skills/`.
+- `git check-ignore` confirms `agent/auth.json`, `agent/sessions`, `agent/state`, and `agent/bin` are ignored.
+- Canonical runtime tree has 64 skills and 5 operation-mindfuck Lisp files.
+- Absorbed legacy collection preserves 125 `opencode-skills` skill directories.
+- `rg` over `agent/` confirms no active runtime references remain to `~/.agents` or legacy opmf paths.

@@ -1,0 +1,2 @@
+2026-03-18T00:00:00Z | kind=observation | origin=pi | owner=err | dod=spec-draft | pi=pi | host=local | manifest=- | refs=pi-self-contained-repo | note=begin self-contained ~/.pi repo migration and absorption of legacy skill sources
+2026-03-19T00:13:39Z | kind=observation | origin=pi | owner=err | dod=impl | pi=pi | host=local | manifest=- | refs=pi-self-contained-repo | note=copied canonical skills into ~/.pi, absorbed legacy opencode-skills, and mirrored operation-mindfuck contracts into repo

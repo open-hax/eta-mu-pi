@@ -10,7 +10,7 @@ Make `~/.pi` the canonical, self-contained git repo for pi agent runtime assets.
 - Ignore sessions and sensitive/runtime state.
 
 ## Open questions
-- Remote GitHub slug/name: user requested `open-hax/ημ-Π`, but GitHub repo-name support / preferred visibility still needs confirmation.
+- None at the moment.
 
 ## Risks
 - Skill duplication if both canonical and absorbed legacy skill roots are enabled at runtime.
@@ -51,7 +51,8 @@ Make `~/.pi` the canonical, self-contained git repo for pi agent runtime assets.
 
 ## Status
 - Local migration complete.
-- Remote GitHub creation still pending because repo slug / visibility choice is unresolved.
+- Remote created at `https://github.com/open-hax/eta-mu-pi`.
+- `~/.agents` converted into a compatibility shim that points at `~/.pi/agent/skills`.
 
 ## Verification
 - `agent/settings.json` parses and now points at `~/.pi/agent/skills/`.
@@ -59,3 +60,5 @@ Make `~/.pi` the canonical, self-contained git repo for pi agent runtime assets.
 - Canonical runtime tree has 64 skills and 5 operation-mindfuck Lisp files.
 - Absorbed legacy collection preserves 125 `opencode-skills` skill directories.
 - `rg` over `agent/` confirms no active runtime references remain to `~/.agents` or legacy opmf paths.
+- `~/.agents/skills` now resolves to `~/.pi/agent/skills`.
+- `~/.agents/.skill-lock.json` now resolves to `~/.pi/agent/skills/.skill-lock.json`.

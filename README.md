@@ -22,7 +22,7 @@ Canonical self-contained home for the local pi agent setup.
 
 These may still exist locally, but are no longer the intended source of truth:
 
-- `~/.agents`
+- `~/.agents` (now expected to be a compatibility shim to `~/.pi/agent/skills`)
 - `~/.config/opencode/operation-mindfuck`
 - `~/devel/orgs/open-hax/opencode-skills`
 
@@ -39,3 +39,4 @@ Ignored:
 ## Notes
 
 - `collections/opencode-skills/` is preserved in-repo source material; it is not the default active skill root in `agent/settings.json` to avoid overlapping skill-name collisions with the canonical runtime skill set.
+- `~/.agents/skills` can safely remain present as a symlink shim for older tooling; the canonical editable source is still `~/.pi/agent/skills`.

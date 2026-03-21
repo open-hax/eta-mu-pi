@@ -7,6 +7,7 @@ agent/bin/
 # Local environment / tooling noise
 .DS_Store
 Thumbs.db
+.#*
 *.swp
 *.swo
 node_modules/

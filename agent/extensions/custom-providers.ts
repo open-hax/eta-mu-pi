@@ -1,7 +1,16 @@
 import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
 
 export default function (pi: ExtensionAPI) {
+  const openHaxBaseUrl = (
+    process.env.OPEN_HAX_OPENAI_PROXY_URL ??
+    process.env.OPEN_HAX_PROXY_URL ??
+    "http://127.0.0.1:8789"
+  ).replace(/\/+$/u, "");
+  const openHaxApiBaseUrl = openHaxBaseUrl.endsWith("/v1")
+    ? openHaxBaseUrl
+    : `${openHaxBaseUrl}/v1`;
   const openHaxToken =
+    process.env.OPEN_HAX_OPENAI_PROXY_AUTH_TOKEN ??
     process.env.PROXY_AUTH_TOKEN ??
     process.env.OPEN_HAX_AUTH_TOKEN ??
     "change-me-open-hax-proxy-token";
@@ -107,28 +116,28 @@ export default function (pi: ExtensionAPI) {
   });
 
   pi.registerProvider("open-hax", {
-    baseUrl: "http://127.0.0.1:8789/v1",
+    baseUrl: openHaxApiBaseUrl,
     apiKey: openHaxToken,
     api: "openai-responses",
     models: [...openHaxGptModels],
   });
 
   pi.registerProvider("open-hax-responses", {
-    baseUrl: "http://127.0.0.1:8789/v1",
+    baseUrl: openHaxApiBaseUrl,
     apiKey: openHaxToken,
     api: "openai-responses",
     models: [...openHaxGptModels],
   });
 
   pi.registerProvider("open-hax-completions", {
-    baseUrl: "http://127.0.0.1:8789/v1",
+    baseUrl: openHaxApiBaseUrl,
     apiKey: openHaxToken,
     api: "openai-completions",
     models: [...openHaxGptModels, ...openHaxFactoryModels],
   });
 
   pi.registerProvider("open-hax-compat", {
-    baseUrl: "http://127.0.0.1:8789/v1",
+    baseUrl: openHaxApiBaseUrl,
     apiKey: openHaxToken,
     api: "openai-completions",
     models: [

@@ -4,8 +4,9 @@
   "vars": {
     "bg": "#272822",
     "fg": "#F8F8F2",
-    "muted": "#75715E",
-    "dim": "#5B5A4F",
+    "muted": "#BBB6A5",
+    "dim": "#999482",
+    "thinking": "#BBB6A5",
     "border": "#49483E",
     "borderMuted": "#3E3D32",
 
@@ -34,7 +35,7 @@
     "muted": "muted",
     "dim": "dim",
     "text": "fg",
-    "thinkingText": "muted",
+    "thinkingText": "thinking",
 
     "selectedBg": "selectedBg",
     "userMessageBg": "userMsgBg",

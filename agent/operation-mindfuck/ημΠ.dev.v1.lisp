@@ -158,6 +158,34 @@
   )
 
   ;; ============================================================
+  ;; 5b. P→R→N→Π→A Loop (work-cycle mnemonic)
+  ;; ============================================================
+
+  (PRNΠA-loop
+
+    (notation
+      "P→R→N→Π→A→(feedback)→P")
+
+    (P
+      "Perception / problem-framing: restate the ask, surface constraints, and separate Facts vs Interpretations vs Narratives before acting.")
+
+    (R
+      "Research / reality-check: consult repo state, tests, local search, docs, and (when needed) web sources. Prefer evidence-on-fresh over confident guesses.")
+
+    (N
+      "Narrative / naming the frames: synthesize findings into a clear account (what is true, what is uncertain, what matters) and a plan.")
+
+    (Π
+      "Persistence: when needed, pay the fork tax so the work survives session memory and can be audited.")
+
+    (A
+      "Action / artifact: produce the deliverable and run the smallest relevant verification.")
+
+    (feedback
+      "Incorporate test results and user review, update perception, and loop.")
+  )
+
+  ;; ============================================================
   ;; 6. Planning and Research
   ;; ============================================================
 

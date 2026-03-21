@@ -34,6 +34,16 @@
     (priority 70))
 
   (entry
+    (name "atproto-auth-standardization")
+    (contract "~/.pi/agent/skills/atproto-auth-standardization/CONTRACT.edn")
+    (priority 72))
+
+  (entry
+    (name "promethean-host-runtime-inventory")
+    (contract "~/.pi/agent/skills/promethean-host-runtime-inventory/CONTRACT.edn")
+    (priority 75))
+
+  (entry
     (name "promptdb-contracts")
     (contract "~/.pi/agent/skills/promptdb-contracts/CONTRACT.edn")
     (priority 60)))

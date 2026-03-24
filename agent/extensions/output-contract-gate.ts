@@ -85,7 +85,7 @@ function readConfig(): GateConfig {
         enabled: true,
         autoRepair: true,
         contractPath: DEFAULT_CONTRACT,
-        enableGptReview: false,
+        enableGptReview: true,
         gptReviewModel: "gpt-5.4",
         maxSessionTurns: 10,
       };
@@ -98,7 +98,7 @@ function readConfig(): GateConfig {
         typeof parsed?.contractPath === "string" && parsed.contractPath.trim().length > 0
           ? parsed.contractPath
           : DEFAULT_CONTRACT,
-      enableGptReview: parsed?.enableGptReview === true,
+      enableGptReview: parsed?.enableGptReview !== false,
       gptReviewModel: typeof parsed?.gptReviewModel === "string" ? parsed.gptReviewModel : "gpt-5.4",
       gptReviewBaseUrl: typeof parsed?.gptReviewBaseUrl === "string" ? parsed.gptReviewBaseUrl : undefined,
       gptReviewApiKey: typeof parsed?.gptReviewApiKey === "string" ? parsed.gptReviewApiKey : undefined,
@@ -109,7 +109,7 @@ function readConfig(): GateConfig {
       enabled: true,
       autoRepair: true,
       contractPath: DEFAULT_CONTRACT,
-      enableGptReview: false,
+      enableGptReview: true,
       gptReviewModel: "gpt-5.4",
       maxSessionTurns: 10,
     };
@@ -469,18 +469,18 @@ export default function outputContractGateExtension(pi: ExtensionAPI) {
 
       if (cmd === "gpt-review") {
         const subCmd = tokens[1];
-        if (subCmd === "on" || subCmd === "enable") {
-          state.config.enableGptReview = true;
-          writeConfig(state.config);
-          setStatus(ctx, state);
-          ctx.ui.notify("GPT review enabled (will call gpt-5.4 for semantic review after structure passes)", "success");
-          return;
-        }
         if (subCmd === "off" || subCmd === "disable") {
           state.config.enableGptReview = false;
           writeConfig(state.config);
           setStatus(ctx, state);
           ctx.ui.notify("GPT review disabled (using stub reviewer)", "info");
+          return;
+        }
+        if (subCmd === "on" || subCmd === "enable") {
+          state.config.enableGptReview = true;
+          writeConfig(state.config);
+          setStatus(ctx, state);
+          ctx.ui.notify("GPT review enabled (default behavior)", "success");
           return;
         }
         if (subCmd === "model") {
@@ -494,7 +494,8 @@ export default function outputContractGateExtension(pi: ExtensionAPI) {
           ctx.ui.notify(`GPT review model set to ${model}`, "success");
           return;
         }
-        ctx.ui.notify("Usage: /output-gate gpt-review on|off|model <id>", "warn");
+        // Default: show current status
+        ctx.ui.notify(`GPT review: ${state.config.enableGptReview ? "enabled" : "disabled"} (model: ${state.config.gptReviewModel ?? "gpt-5.4"})`, "info");
         return;
       }
 

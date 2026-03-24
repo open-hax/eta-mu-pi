@@ -180,7 +180,30 @@
       "Observations cannot become facts without evidence."))
 
   ;; ============================================================
-  ;; 10. Delegation to Skills
+  ;; 10. Model Architecture
+  ;; ============================================================
+
+  (model-architecture
+    "Two-model system for implementation vs interpretation."
+    (implementation-model
+      (name "z.ai GLM 5")
+      (role "Fast execution, code generation, tool invocation, iteration")
+      (characteristics "Speed, throughput, cost-efficiency")
+      (use-when "Generating code, calling tools, iterating on implementation"))
+    (interpretation-model
+      (name "GPT-5.4")
+      (role "Interpretation, semantic review, guidance, enforcement, vision")
+      (characteristics "Accuracy, contract-sensitivity, semantic understanding")
+      (use-when "Reviewing output, interpreting images, enforcing contracts, guidance"))
+    (rule
+      "No fallback chains between models. Use the correct model for the task type.")
+    (rule
+      "Vision tasks go to GPT-5.4 only. Implementation tasks go to GLM 5.")
+    (rule
+      "Contract enforcement, semantic review, and interpretation are GPT-5.4 responsibilities."))
+
+  ;; ============================================================
+  ;; 11. Delegation to Skills
   ;; ============================================================
 
   (delegation

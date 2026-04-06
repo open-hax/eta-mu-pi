@@ -1,10 +1,10 @@
 ---
 name: clock-model-evolver
-description: "Improve the Hormuz clock model through new signal classes, schema changes, and better rendering or branch logic"
+description: "Improve the Hormuz clock model through new signal classes, schema changes, uncertainty modeling, and better rendering or branch logic"
 compatibility: opencode
 metadata:
   domain: hormuz-clock
-  version: 1
+  version: 2
 ---
 
 # Skill: Clock Model Evolver

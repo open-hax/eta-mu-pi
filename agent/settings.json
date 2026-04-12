@@ -1,7 +1,7 @@
 {
-  "defaultProvider": "open-hax",
-  "defaultModel": "gpt-5.4",
-  "defaultThinkingLevel": "xhigh",
+  "defaultProvider": "open-hax-compat",
+  "defaultModel": "glm-5",
+  "defaultThinkingLevel": "high",
   "theme": "monokai",
   "quietStartup": false,
   "compaction": {
@@ -14,23 +14,37 @@
     "maxRetries": 3
   },
   "enabledModels": [
+    "zai/*",
     "mistral/*",
     "github-copilot/*",
     "open-hax/*",
     "open-hax-completions/*",
-    "open-hax-compat/*"
+    "open-hax-compat/*",
+    "open-hax-local/*",
+    "open-hax-local-completions/*",
+    "open-hax-local-compat/*"
   ],
   "skills": [
     "~/.pi/agent/skills/"
   ],
   "extensions": [
-    "~/.pi/agent/extensions/custom-providers.ts",
-    "~/.pi/agent/extensions/opencode-global-instructions.ts",
-    "~/.pi/agent/extensions/opmf-contract-runtime.ts",
-    "~/.pi/agent/extensions/task-timing.ts",
-    "~/.pi/agent/extensions/websearch-open-hax.ts"
+    "~/.pi/agent/extensions/cljs-custom-providers/index.ts",
+    "~/.pi/agent/extensions/cljs-opencode-global-instructions/index.ts",
+    "~/.pi/agent/extensions/cljs-opmf-contract-gate/index.ts",
+    "~/.pi/agent/extensions/cljs-task-timing/index.ts",
+    "~/.pi/agent/extensions/cljs-websearch-open-hax/index.ts",
+    "~/.pi/agent/extensions/cljs-image-render/index.ts",
+    "~/.pi/agent/extensions/cljs-receipt-river/index.ts",
+    "~/.pi/agent/extensions/cljs-session-mycology/index.ts",
+    "~/.pi/agent/extensions/cljs-graph-memory/index.ts",
+    "~/.pi/agent/extensions/webpage-markdown.ts",
+    "~/.pi/agent/extensions/desktop-ops.ts",
+    "~/.pi/agent/extensions/skill-graph-aco.ts",
+    "~/.pi/agent/extensions/analyze-image.ts",
+    "~/.pi/agent/extensions/manipulate-image.ts",
+    "~/.pi/agent/extensions/apply-patch.ts"
   ],
   "enableSkillCommands": true,
-  "lastChangelogVersion": "0.58.0",
+  "lastChangelogVersion": "0.63.1",
   "hideThinkingBlock": false
 }
